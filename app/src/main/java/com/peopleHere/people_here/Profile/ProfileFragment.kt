@@ -25,7 +25,11 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+
         return binding.root
+
+
     }
 
     override fun onViewCreated(
