@@ -3,5 +3,5 @@ package com.peopleHere.people_here.Remote
 interface SignInView {
     fun SignInLoading()
     fun SignInSuccess()
-    fun SignInFailure(code: Int, msg: String)
+    fun SignInFailure()
 }

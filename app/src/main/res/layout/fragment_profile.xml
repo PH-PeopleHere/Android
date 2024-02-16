@@ -3,193 +3,182 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_select_picture"
     tools:context=".Profile.ProfileFragment">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
 
-    <TextView
-        android:id="@+id/tv_profile_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="top"
-        android:lineSpacingExtra="5sp"
-        android:text="프로필"
-        android:translationY="-2.52sp"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toTopOf="parent"
+        <TextView
+            android:id="@+id/tv_profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="5sp"
+            android:text="프로필"
+            android:translationY="-2.52sp"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toTopOf="parent"
 
-        />
+            />
 
-    <ImageView
-        android:id="@+id/iv_profile_env"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/profile_gear"
-        app:layout_constraintEnd_toEndOf="@id/guide_end"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_profile_env"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/profile_gear"
+            app:layout_constraintEnd_toEndOf="@id/guide_end"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="28dp"
-        app:cardBackgroundColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_profile_title">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_title">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/civ_profile_img"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/profile_olivia" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_profile_img"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_olivia" />
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/cv_tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="11dp"
-        android:gravity="center"
-        android:text="레이첼"
-        app:layout_constraintEnd_toEndOf="@id/cv_profile"
-        app:layout_constraintStart_toStartOf="@id/cv_profile"
-        app:layout_constraintTop_toBottomOf="@id/cv_profile" />
+        <TextView
+            android:id="@+id/cv_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:text="레이첼"
+            app:layout_constraintEnd_toEndOf="@id/cv_profile"
+            app:layout_constraintStart_toStartOf="@id/cv_profile"
+            app:layout_constraintTop_toBottomOf="@id/cv_profile" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_my_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
-        android:backgroundTint="@color/Gray7"
-        android:text="나의 프로필"
-        android:textColor="@color/white"
-        app:cornerRadius="4dp"
-        app:icon="@drawable/profile_person"
-        app:layout_constraintEnd_toStartOf="@id/btn_my_profile_1"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cv_tv_name" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_my_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/Gray7"
+            android:text="나의 프로필"
+            android:textColor="@color/white"
+            app:cornerRadius="4dp"
+            app:icon="@drawable/profile_person"
+            app:layout_constraintEnd_toStartOf="@id/btn_my_profile_1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_tv_name" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_my_profile_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/Gray7"
-        android:text="나의 데이트립"
-        android:textColor="@color/white"
-        app:cornerRadius="4dp"
-        app:icon="@drawable/profile_person"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_my_profile"
-        app:layout_constraintTop_toBottomOf="@id/cv_tv_name" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_my_profile_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/Gray7"
+            android:text="나의 데이트립"
+            android:textColor="@color/white"
+            app:cornerRadius="4dp"
+            app:icon="@drawable/profile_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_my_profile"
+            app:layout_constraintTop_toBottomOf="@id/cv_tv_name" />
 
-    <ImageView
-        android:id="@+id/iv_my_profile_icon_person"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:src="@drawable/profile_person"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/btn_my_profile"
-        app:layout_constraintStart_toStartOf="@id/btn_my_profile"
-        app:layout_constraintTop_toTopOf="@id/btn_my_profile" />
+        <ImageView
+            android:id="@+id/iv_my_profile_icon_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/profile_person"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/btn_my_profile"
+            app:layout_constraintStart_toStartOf="@id/btn_my_profile"
+            app:layout_constraintTop_toTopOf="@id/btn_my_profile" />
 
-    <TextView
-        android:id="@+id/tv_my_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="16dp"
-        android:text="내 프로필"
-        android:textColor="@color/white"
-        android:visibility="gone"
+        <TextView
+            android:id="@+id/tv_my_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="16dp"
+            android:text="내 프로필"
+            android:textColor="@color/white"
+            android:visibility="gone"
 
-        app:layout_constraintBottom_toBottomOf="@id/btn_my_profile"
-        app:layout_constraintEnd_toEndOf="@id/btn_my_profile"
-        app:layout_constraintStart_toStartOf="@id/iv_my_profile_icon_person"
-        app:layout_constraintTop_toTopOf="@id/btn_my_profile"
+            app:layout_constraintBottom_toBottomOf="@id/btn_my_profile"
+            app:layout_constraintEnd_toEndOf="@id/btn_my_profile"
+            app:layout_constraintStart_toStartOf="@id/iv_my_profile_icon_person"
+            app:layout_constraintTop_toTopOf="@id/btn_my_profile"
 
-        />
+            />
 
-    <ImageView
-        android:id="@+id/profile_cutting_line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:color="@color/Gray1.5"
-        android:src="@drawable/profile_cutting_line"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_my_profile" />
+        <ImageView
+            android:id="@+id/profile_cutting_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:color="@color/Gray1.5"
+            android:src="@drawable/profile_cutting_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_my_profile" />
 
-    <TextView
-        android:id="@+id/tv_profile_next_meet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="다가오는 만남"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/profile_cutting_line" />
+        <TextView
+            android:id="@+id/tv_profile_next_meet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="다가오는 만남"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toBottomOf="@id/profile_cutting_line" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@id/tv_profile_past_meet"
-        app:layout_constraintTop_toBottomOf="@id/tv_profile_next_meet"
-        tools:listitem="@layout/profile_item_product" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_next_meet"
+            app:layout_constraintBottom_toTopOf="@id/tv_profile_past_meet"
+            tools:listitem="@layout/profile_item_product" />
+
 
 
         <TextView
-        android:id="@+id/tv_profile_past_meet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@id/guide_start"
-        android:text="지난만남"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/recyclerView"
-        android:layout_marginTop="48dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_profile_past_meet"
-            tools:listitem="@layout/profile_item_past_meet">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
+            android:id="@+id/tv_profile_past_meet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="지난만남"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

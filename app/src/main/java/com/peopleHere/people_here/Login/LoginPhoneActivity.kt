@@ -44,6 +44,7 @@ class LoginPhoneActivity : AppCompatActivity() {
         ButtonOn()
 
         binding.cvEmail.setOnClickListener {
+
             val intent = Intent(this, LoginEmailActivity::class.java)
             startActivity(intent)
 

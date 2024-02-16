@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Main.MainSearchActivity">
 
@@ -39,16 +40,16 @@
             android:layout_marginBottom="16dp"
             android:src="@drawable/ic_main_left_arrow"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/main_search"
-            android:textSize="@dimen/main_search"
-            android:textColor="@color/Gray8"
-            android:layout_marginStart="6dp"
-            app:layout_constraintStart_toEndOf="@id/iv_main_search_arrow"
-            app:layout_constraintTop_toTopOf="@id/iv_main_search_arrow"
-            app:layout_constraintBottom_toBottomOf="@id/iv_main_search_arrow"/>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/main_search"-->
+<!--            android:textSize="@dimen/main_search"-->
+<!--            android:textColor="@color/Gray8"-->
+<!--            android:layout_marginStart="6dp"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_main_search_arrow"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_main_search_arrow"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/iv_main_search_arrow"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -67,6 +68,7 @@
             android:hint="@string/main_search_hint"
             android:textSize="@dimen/main_search_hint"
             android:background="@android:color/transparent"
+            android:fontFamily="@font/pretendard_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -102,6 +104,8 @@
             android:id="@+id/tv_main_search_recent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:textSize="14sp"
             android:text="@string/main_search_recent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>

@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit
 class ApplicationClass: Application() {
 
     companion object{//공통 변수를 가지고 있는 객체 ->싱글톤, 클래스에 포함된 오브젝트
-        const val X_ACCESS_TOKEN : String = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJUZXN0MTIzNEBrb25rdWsuYWMua3IiLCJpYXQiOjE3MDc3MjA4MjcsImV4cCI6MTcwOTUyMDgyN30.nYx-0H2z9RP3HdE2dpRvh6bVfD0fI7l_hnrB4UVtg1c"
+    var X_ACCESS_TOKEN : String = "Authorization"
+
         //x-access-token 방식과 authorization 방식 여러 ㅅ개가 존재, token 값을 바꿔야 함
         const val DEV_URL : String = "http://54.180.162.207:8080"
         const val PROD_URL : String = "http://kuit_prod_url"

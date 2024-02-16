@@ -6,6 +6,25 @@
     android:layout_marginTop="12dp"
     android:layout_marginBottom="12dp">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp"/>
+
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_main_tour_list_user_course"
         android:layout_width="wrap_content"
@@ -46,5 +65,20 @@
         android:textSize="@dimen/main_search_recent_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_place"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:background="@drawable/making_tour_add_list_dialog_delete"
+        android:textSize="16sp"
+        android:textColor="@color/Red3"
+        android:text="추가"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintBottom_toBottomOf="@id/tv_main_search_recent_place"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

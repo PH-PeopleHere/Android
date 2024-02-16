@@ -50,6 +50,7 @@
         android:layout_marginTop="18dp"
         android:text="@string/activity_introduce_headline"
         android:textSize="20sp"
+        android:fontFamily="@font/suite_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cv_exit" />
     <TextView

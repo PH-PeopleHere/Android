@@ -1,14 +1,11 @@
 package com.peopleHere.people_here.CourseContents
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.peopleHere.people_here.Data.MainData
 import com.peopleHere.people_here.Local.getJwt
-import com.peopleHere.people_here.Main.MainAdapter
-import com.peopleHere.people_here.R
 import com.peopleHere.people_here.Remote.AuthService
 import com.peopleHere.people_here.Remote.UpcomingDateResponse
 import com.peopleHere.people_here.Remote.UpcomingDateView
@@ -71,7 +68,10 @@ class PossibleEnjoyActivity : AppCompatActivity() , UpcomingDateView {
     private fun initRecyclerView() {
         val enjoyAdapter = PossibleEnjoyAdapter(classifiedData, tourTime, object : PossibleEnjoyInnerAdapter.OnItemClickListener {
             override fun onItemClick(dateInfo: UpcomingDateResponse) {
-                // 항목 클릭 처리
+                val intent = Intent(this@PossibleEnjoyActivity, PossibleEnjoyActivity::class.java)
+                intent.putExtra("dates",dateInfo.date)
+                intent.putExtra("tourId",dateInfo.id)
+                startActivity(intent)
             }
         })
 

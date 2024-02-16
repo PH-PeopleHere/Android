@@ -19,6 +19,7 @@ class DayTripManageActivity : AppCompatActivity() , BringCourseView {
     private var deletedAdapter : DeletedAdapter?= null
     private var dayTripData : ArrayList<BringCourseResponse> = arrayListOf()
     private var tourId : Int = 0
+    private var tourName : String ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDayTripManageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -67,7 +68,9 @@ class DayTripManageActivity : AppCompatActivity() , BringCourseView {
             override fun onItemClick(dayTripInfo : BringCourseResponse) {
                 val intent = Intent(this@DayTripManageActivity, CalendarActivity::class.java)
                 tourId = dayTripInfo.tourId
+                tourName = dayTripInfo.tourName
                 intent.putExtra("tourId",tourId)
+                intent.putExtra("tourName",tourName)
                 startActivity(intent)
             }
         })

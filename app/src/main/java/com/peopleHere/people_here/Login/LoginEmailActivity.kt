@@ -12,7 +12,6 @@ import com.peopleHere.people_here.ApplicationClass
 import com.peopleHere.people_here.R
 import com.peopleHere.people_here.Remote.AuthService
 import com.peopleHere.people_here.Remote.CheckEmailCallback
-import com.peopleHere.people_here.SignUp.SignUpActivity
 import com.peopleHere.people_here.databinding.ActivityLoginEmailBinding
 import java.util.regex.Pattern
 
@@ -30,19 +29,19 @@ class LoginEmailActivity : AppCompatActivity(), CheckEmailCallback {
         binding = ActivityLoginEmailBinding.inflate(layoutInflater)
         ButtonOn()
         binding.cvContinue.setOnClickListener {
-
             if (checkContinue) {
                 //여기서 server에서 받아서 false면 signUp으로 가고 true면 LoginEmailNext로 보내기
                 val email = binding.etEmail.text.toString()//아이디보냄
                 ApplicationClass.mSharedPreferencesManager.edit().putString("email",email).commit()//
                 authService.checkEmail(email)//메소드 호출 따라서 엑티비에서 requset로 넘김
-
             }
         }
+        binding.cvPhone.setOnClickListener {
+            val intent = Intent(this, LoginPhoneActivity::class.java)
+            startActivity(intent)
+        }
         questionEmail = binding.etEmail
-
         setContentView(binding.root)
-
     }
 
     fun checkEmail(): Boolean {

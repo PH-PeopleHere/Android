@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 import androidx.core.widget.addTextChangedListener
+import com.google.android.material.internal.ViewUtils.dpToPx
 import com.peopleHere.people_here.ApplicationClass
 import com.peopleHere.people_here.ForCommunicate
 import com.peopleHere.people_here.R
@@ -69,8 +70,8 @@ class SignUpActivity : AppCompatActivity(), ForCommunicate {
                     binding.etPassword.text.toString(),
                     binding.etFirstName.text.toString(),
                     binding.etLastName.text.toString(),
+                    "1940-01-01",
                     sendingGender.toString(),
-                    sendingbirth.toString(),
                 )
                 val intent = Intent(this, AlarmOkActivity::class.java)
                 //TODO:서버에다가 회원가입 정보 다 넣기
@@ -167,6 +168,14 @@ class SignUpActivity : AppCompatActivity(), ForCommunicate {
                     binding.ivCheck1.setImageResource(R.drawable.checked_no)
                     binding.tvOver8.setTextColor(gray5_5)
                     checkPass1 = false
+
+                    binding.ivWrong.setImageResource(0)
+                    val layoutParams = binding.ivWrong.layoutParams
+                    layoutParams.width = dpToPx(0) // dpToPx() 메서드는 dp 값을 픽셀로 변환하는 함수입니다.
+                    layoutParams.height = dpToPx(0)
+                    binding.tvWrong.setText("")
+                    binding.etPassword.setBackgroundResource(R.drawable.login_phone_et)
+
                 }
 
                 if (isPasswordValid()) {//ws
@@ -289,4 +298,9 @@ class SignUpActivity : AppCompatActivity(), ForCommunicate {
         checkPass2 = isPasswordValid()
         forNext()
     }
+    fun dpToPx(dp: Int): Int {
+        val density = Resources.getSystem().displayMetrics.density
+        return (dp * density).toInt()
+    }
+
 }

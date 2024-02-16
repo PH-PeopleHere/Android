@@ -1,7 +1,11 @@
 package com.peopleHere.people_here
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+
+import androidx.core.content.res.ResourcesCompat
+import com.peopleHere.people_here.ApplicationClass.Companion.X_ACCESS_TOKEN
 import com.peopleHere.people_here.Main.MainFragment
 import com.peopleHere.people_here.MyTour.MakingCourseFragment
 import com.peopleHere.people_here.Profile.ProfileFragment
@@ -14,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("token_check",X_ACCESS_TOKEN)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

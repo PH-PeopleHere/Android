@@ -129,6 +129,34 @@
     <string name="coming_date_ongoing">참여 요청 중</string>
     <string name="day_trip_contents_possible_enjoy">참여 가능한 일정·</string>
 
+    <!--request_enjoy_activity 이름 정리-->
+    <string name="tour_register_btn">동의 및 요청하기</string>
+    <string name="tour_service_before">약관을 동의함으로써</string>
+    <string name="tour_service_after">에 동의합니다.</string>
+
+    <!--약관 동의 이름 정리 -->
+    <string name="terms_of_service_1">법적 약관</string>
+    <string name="terms_of_service_2">한국 내 정보의 수집 및 사용
+</string>
+    <string name="terms_of_service_3">피플히어가 수집하는 개인정보
+</string>
+    <string name="terms_of_service_4">피플히어 플랫폼을 이용하는 데 필요한 정보</string>
+    <string name="terms_of_service_5">당사는 회원님이 피플히어 플랫폼을 이용할 때 회원님의 개인정보를 수집합니다. 그렇지 않은 경우, 피플히어는 요청하신 서비스를 회원님께 제공하지 못할 수 있습니다. 이러한 정보에는 다음이 포합됩니다.</string>
+    <string name="terms_of_service_6">연락처 정보, 계정, 프로필 정보.</string>
+    <string name="terms_of_service_7">회원님의 이름, 전화번호, 이메일 주소, 생년월일, 프로필 사진 등.</string>
+    <string name="terms_of_service_8">회원님이 자발적으로 피플히어에 제공하는 정보</string>
+    <string name="terms_of_service_9">회원님은 추가적인 개인정보를 피플히어에 제공할 수 있습니다. 이러한 정보에는 다음이 포함될 수 있습니다.</string>
+    <string name="terms_of_service_10">추가적인 프로필 정보.</string>
+    <string name="terms_of_service_11">구사하는 언어, 거주 도시, 인적 사항 등. 이러한 정보는 공개 프로필 페이지에 포함되며 다른 사람들이 볼 수 있습니다.</string>
+    <string name="terms_of_service_12">기타 정보.</string>
+    <string name="terms_of_service_13">예를들어, 양식을 작성하거나, 계정에 정보를 추가하거나, 설문조사에 응답하거나, 프로모션에 참여하거나, 커뮤니티에 데이트립을 만들어 올리거나, 당사의 고객지원팀 및 다른 회원들과 소통하거나, 본인의 경험을 당사와 공유하는 경우. 여기에는 회원님이 당사에 자발적으로 공유하는 건강정보도 포함될 수 있습니다.</string>
+    <string name="terms_of_service_14">수집한 정보의 활용</string>
+    <string name="terms_of_service_15">피플히어 플랫폼의 제공, 개선, 개발</string>
+    <string name="terms_of_service_16">예: 회원님이 다른 회원과 커뮤니케이션할 수 있도록 지원.</string>
+    <string name="terms_of_service_17">보유 기간</string>
+    <string name="terms_of_service_18">기본적으로 사용자가 게정 삭제 또는 게정 탈퇴를 요청하는 경우 당사는 사용자의 개인정보를 삭제 처리합니다.</string>
+    <string name="terms_of_service_19">개인정보 수집 및 이용을 거부할 권리</string>
+    <string name="terms_of_service_20">사용자는 개인정보 수집 및 이용을 거부할 권리가 있습니다. 사용자가 회원가입 과정에서 필수로 요구되는 최소한의 개인정보의 수집 및 이용을 거부하는 경우, 피플히어 서비스 이용이 어려울 수 있습니다.</string>
 
     <!--dialog_help 투어 유형 이름 정리 -->
     <string name="dialog_help_example">투어 유형 예시</string>
@@ -228,6 +256,8 @@
 
 
     <!--activity_login_email_next-->
+
+    <string name="activity_login_email_next_login">\이메일로 로그인</string>
     <string name="activity_login_email_email">\이메일</string>
     <string name="activity_login_email_see">\<u>표시</u></string>
     <string name="activity_login_email_hide">\<u>숨김</u></string>
@@ -244,7 +274,7 @@
     <string name="activity_signup_age_check">피플히어에 가입하려면 만 18세 이상이어야 해요.\n다른 회원에게 생일을 공개하지 않아요.</string>
     <string name="activity_signup_sex">성별</string>
     <string name="activity_signup_over8">8자리 이상</string>
-    <string name="activity_signup_char">기호나 숫자를 1자 이상 포함</string>
+    <string name="activity_signup_char">특수문자나 숫자를 1자 이상 포함</string>
     <string name="activity_signup_agree1">개인정보 수집 및 이용에 동의합니다.</string>
     <string name="activity_signup_agree2">\<u>피플히어가 수집하는 개인정보를 보려면 클릭하세요.</u></string>
     <string name="activity_signup_marketing1">마케팅 이메일을 수신하겠습니다. (선택)</string>
@@ -295,6 +325,10 @@
     <string name="activity_request_with_draw_plan">일정</string>
     <string name="activity_request_with_draw_place">처음 만나는 장소</string>
     <string name="activity_request_with_draw_cancel_request">요청 철회하기</string>
+    <!--activity_password_reset 이름 정리 -->
+    <string name="activity_password_reset_title">비밀번호 재설정</string>
+    <string name="activity_password_reset_input">새로운 비밀번호를 입력하세요.</string>
+
 
     <!--profile 캘린더 이름 정리 -->
     <string-array name="week_label">

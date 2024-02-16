@@ -42,6 +42,7 @@
             app:layout_constraintGuide_percent="0.956"/>
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"

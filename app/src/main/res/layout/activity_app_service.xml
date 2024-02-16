@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CourseContents.AppServiceActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.044"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.956"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_tour_contents_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.07">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_top_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.044"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_top_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.956"/>
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_main_cancel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_top_start"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cl_tour_contents_top_bar"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintEnd_toEndOf="@id/guide_end">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_service_1"
+                android:text="@string/terms_of_service_1"
+                android:fontFamily="@font/pretendard_medium"
+                android:textSize="14sp"
+                android:textColor="@color/Gray5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_2"
+                android:text="@string/terms_of_service_2"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="20sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_3"
+                android:text="@string/terms_of_service_3"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="18sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_4"
+                android:text="@string/terms_of_service_4"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="16sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_5"
+                android:text="@string/terms_of_service_5"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_4"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_6"
+                android:text="@string/terms_of_service_6"
+                android:fontFamily="@font/pretendard_medium"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_5"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_7"
+                android:text="@string/terms_of_service_7"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_6"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_8"
+                android:text="@string/terms_of_service_8"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="16sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_7"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_9"
+                android:text="@string/terms_of_service_9"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_8"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_10"
+                android:text="@string/terms_of_service_10"
+                android:fontFamily="@font/pretendard_medium"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_9"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_11"
+                android:text="@string/terms_of_service_11"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_10"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_12"
+                android:text="@string/terms_of_service_12"
+                android:fontFamily="@font/pretendard_medium"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_11"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_13"
+                android:text="@string/terms_of_service_13"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_12"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_14"
+                android:text="@string/terms_of_service_14"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="18sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_13"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_15"
+                android:text="@string/terms_of_service_15"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="16sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_14"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_16"
+                android:text="@string/terms_of_service_16"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_15"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_17"
+                android:text="@string/terms_of_service_17"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="18sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_16"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_18"
+                android:text="@string/terms_of_service_18"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_17"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_19"
+                android:text="@string/terms_of_service_19"
+                android:fontFamily="@font/suite_bold"
+                android:textSize="18sp"
+                android:textColor="@color/Gray8"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_18"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_service_20"
+                android:text="@string/terms_of_service_20"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"
+                android:textColor="@color/Gray8"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="185dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_19"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

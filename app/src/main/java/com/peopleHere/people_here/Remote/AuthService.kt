@@ -4,8 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.peopleHere.people_here.ApplicationClass
+import com.peopleHere.people_here.ApplicationClass.Companion.X_ACCESS_TOKEN
 import com.peopleHere.people_here.Login.LoginEmailNextActivity
-import com.peopleHere.people_here.Login.VerifyEmailActivity
+import com.peopleHere.people_here.MainActivity
 import com.peopleHere.people_here.SignUp.SignUpActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,6 +27,7 @@ class AuthService(private val context: Context) {
     private lateinit var upcomingDateView: UpcomingDateView
     private lateinit var bringCourseView: BringCourseView
     private lateinit var changeWishView: ChangeWishView
+
     // 본인 코드에서 사용할 함수 정의
 //    fun xxx(singUpView : SignUpView){
 //        this.signUpView = signUpView
@@ -42,36 +44,44 @@ class AuthService(private val context: Context) {
     fun signin(id: String, pw: String) {
         val request = SignInRequest(id, pw)//email이랑 pw를 넘기겠지
         authService.singin(request)
-            .enqueue(object : Callback<BaseResponse<SignInResponse<JwtToken>>> {
+            .enqueue(object : Callback<BaseResponse<SignInResponse>> {
                 //익명이니 함수 구현 해줘야 함+enqueue 로 자동 비동기
                 override fun onResponse(
-                    call: Call<BaseResponse<SignInResponse<JwtToken>>>,
-                    response: Response<BaseResponse<SignInResponse<JwtToken>>>
+                    call: Call<BaseResponse<SignInResponse>>,
+                    response: Response<BaseResponse<SignInResponse>>
                 ) {
-                    var resp = response.body()//여기 token이랑 nickname두개 받는데 어케 처리>
-                    Log.d("Signin response", resp.toString())//로그에 찍기
-                    when (resp!!.status) {//nullable 하고code부분 받아
-                        200 -> {//성공
-                            val signInResponse = resp.result//ID및 토큰 가져오게
-                            signInResponse?.let {
-                                signInView.SignInSuccess()//여기는 그냥 성공만
 
-                                //saveJwt(resp.result.UserId,resp.result.token.accessToken)//nickname,token대입
-
-                                Log.d(
-                                    "AuthService",
-                                    "Nickname: ${resp.result.userId}, Token: ${resp.result.token.accessToken}"
-                                )
-                                //TODO:여기서 sharedrpeference에 넣고, loginActivity에서 가져와서 텍스트 전달?
+                    Log.d("Response_signIn",response.toString())
+                    val resp = response.body()
+                    if (resp != null) {
+                        when (resp.status) {
+                            200 -> {
+                                val signInResponse = resp.result
+                                signInResponse?.let {
+                                    signInView.SignInSuccess()
+                                    Log.d(
+                                        "AuthService",
+                                        "Nickname: ${resp.result.userId}, Token: ${resp.result.jwtToken.accessToken}"
+                                    )
+                                    X_ACCESS_TOKEN=resp.result.jwtToken.accessToken
+                                    //TODO:토큰 이제 바뀌게
+                                    Log.d("Check_token", X_ACCESS_TOKEN)
+                                    val intent = Intent(context, MainActivity::class.java)
+                                    //intent.putExtra("email", binding.etEmail.text.toString())
+                                    context.startActivity(intent)
+                                }
                             }
-                        }
 
-                        else -> signInView.SignInFailure(resp.code, resp.message)//실패에 이걸 넘겨줌
+                            else -> signInView.SignInFailure()
+                        }
+                    } else {
+                        Log.e("AuthService", "Response body is null.")
+                        signInView.SignInFailure()
                     }
                 }
 
                 override fun onFailure(
-                    call: Call<BaseResponse<SignInResponse<JwtToken>>>,
+                    call: Call<BaseResponse<SignInResponse>>,
                     t: Throwable
                 ) {
                     Log.d("SignIn failed", t.toString())//실패했을때 어떤 이윤지 쓰로어블하게
@@ -83,45 +93,47 @@ class AuthService(private val context: Context) {
         this.mainView = mainView
     }
 
-    fun setCourseContentsView(courseContentsView: CourseContentsView){
+    fun setCourseContentsView(courseContentsView: CourseContentsView) {
         this.courseContentsView = courseContentsView
     }
 
-    fun setUpcomingDateView(upcomingDateView: UpcomingDateView){
+    fun setUpcomingDateView(upcomingDateView: UpcomingDateView) {
         this.upcomingDateView = upcomingDateView
     }
 
-    fun setBringCourseView(bringCourseView: BringCourseView){
+    fun setBringCourseView(bringCourseView: BringCourseView) {
         this.bringCourseView = bringCourseView
     }
 
-    fun setChangeWishView(changeWishView: ChangeWishView){
+    fun setChangeWishView(changeWishView: ChangeWishView) {
         this.changeWishView = changeWishView
     }
 
     fun mainInfo() {
 //        mainView.MainLoading()
-        authService.mainInfo(0, 10, listOf("createdAt,asc")).enqueue(object : Callback<BaseResponse<MainResponse>> {
-            override fun onResponse(
-                call: Call<BaseResponse<MainResponse>>,
-                response: Response<BaseResponse<MainResponse>>
-            ) {
+        authService.mainInfo(0, 10, listOf("createdAt,asc"))
+            .enqueue(object : Callback<BaseResponse<MainResponse>> {
+                override fun onResponse(
+                    call: Call<BaseResponse<MainResponse>>,
+                    response: Response<BaseResponse<MainResponse>>
+                ) {
 //                Log.d("response", response.toString())
-                if (response.isSuccessful) {
-                    val resp = response.body()
+                    if (response.isSuccessful) {
+                        val resp = response.body()
 //                    Log.d("Main Response Body", resp.toString())
 //                    Log.d("Main Response Body result", resp?.result.toString())
-                    when (resp!!.status) {
-                        200 -> mainView.MainSuccess(resp.result.content)
-                        else -> mainView.MainFailure(resp.status, resp.message)
+                        when (resp!!.status) {
+                            200 -> mainView.MainSuccess(resp.result.content)
+                            else -> mainView.MainFailure(resp.status, resp.message)
+                        }
                     }
                 }
-            }
-            override fun onFailure(call: Call<BaseResponse<MainResponse>>, t: Throwable) {
-                Log.d("Main Failed", t.toString())
-            }
 
-        })
+                override fun onFailure(call: Call<BaseResponse<MainResponse>>, t: Throwable) {
+                    Log.d("Main Failed", t.toString())
+                }
+
+            })
     }
 
     fun checkEmail(email: String) {
@@ -132,7 +144,7 @@ class AuthService(private val context: Context) {
                     response: Response<BaseResponse<CheckEmailResponse>>
                 ) {
                     val resp = response.body()
-                    Log.d("response_error_checkemail",response.message())
+                    Log.d("response_error_checkemail", response.message())
                     resp?.let {
                         when (it.status) {
                             200 -> {
@@ -153,12 +165,12 @@ class AuthService(private val context: Context) {
                                     checkEmailCallback?.onEmailAvailable(response.emailAvailable)
                                 }
                             }
+
                             else -> {
                                 Log.d(
                                     "checkEmail_fail",
                                     "fail"
                                 )
-                                signInView.SignInFailure(it.code, it.message)
                             }
                         }
                     } ?: run {
@@ -166,6 +178,7 @@ class AuthService(private val context: Context) {
 
                     }
                 }
+
                 override fun onFailure(
                     call: Call<BaseResponse<CheckEmailResponse>>,
                     t: Throwable
@@ -181,16 +194,16 @@ class AuthService(private val context: Context) {
         password: String,
         firstName: String,
         lastName: String,
-        gender: String,
         birth: String,
+        gender: String
     ) {
         val request = SignUpRequest(
             email,
             password,
             firstName,
             lastName,
-            gender,
-            birth
+            birth,
+            gender
         )//email이랑 pw를 넘기겠지
         authService.signup(request)
             .enqueue(object : Callback<BaseResponse<SignUpResponse>> {
@@ -217,9 +230,11 @@ class AuthService(private val context: Context) {
                                 Log.d("Response_success", resp.result.userId.toString())
                             }
                         }
-                        else -> signInView.SignInFailure(resp.code, resp.message)
+
+
                     }
                 }
+
                 override fun onFailure(
                     call: Call<BaseResponse<SignUpResponse>>,
                     t: Throwable
@@ -358,4 +373,43 @@ class AuthService(private val context: Context) {
             })
     }
 
+    fun changePassword(password: String) {
+        authService.changePassword(password)
+            .enqueue(object : Callback<ChangePasswordResponse> {
+                override fun onResponse(
+                    call: Call<ChangePasswordResponse>,
+                    response: Response<ChangePasswordResponse>
+                ) {
+                    Log.d("password_changed_res", response.toString())
+                    val resp = response.body()
+                    resp?.let {
+                        when (it.status) {
+                            200 -> {
+                                // 성공적인 응답 처리
+                                Log.d("password_changed", it.success.toString())
+                            }
+
+                            else -> {
+                                Log.d(
+                                    "checkEmail_fail",
+                                    "fail"
+                                )
+                            }
+                        }
+                    } ?: run {
+                        Log.e("password_changed", "Response body is null")
+
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<ChangePasswordResponse>,
+                    t: Throwable
+                ) {
+                    // 네트워크 실패 처리
+                    Log.e("checkEmail", "Network request failed", t)
+                }
+            })
+
+    }
 }

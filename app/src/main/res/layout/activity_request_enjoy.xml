@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CourseContents.RequestEnjoyActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_top_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.044"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_top_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.956"/>
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_main_cancel"
+        android:elevation="1dp"
+        app:layout_constraintTop_toTopOf="@id/ll_request_enjoy_top_bar"
+        app:layout_constraintBottom_toBottomOf="@id/ll_request_enjoy_top_bar"
+        app:layout_constraintStart_toStartOf="@id/guide_top_start"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_request_enjoy_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.07">
+
+
+        <TextView
+            android:id="@+id/tv_review_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_trip_contents_possible_enjoy"
+            android:textColor="@color/Gray8"
+            android:layout_marginStart="2dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/suite_bold"/>
+
+        <TextView
+            android:id="@+id/tv_review_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Gray8"
+            android:text="111"
+            android:textSize="16sp"
+            android:fontFamily="@font/suite_bold"/>
+
+        <TextView
+            android:id="@+id/tv_review_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Gray8"
+            android:text="@string/review_count"
+            android:textSize="16sp"
+            android:fontFamily="@font/suite_bold"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/view_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/Gray2"
+        app:layout_constraintTop_toBottomOf="@id/ll_request_enjoy_top_bar"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_main_tour_list_user"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/guide_top_start"
+        app:layout_constraintTop_toBottomOf="@id/view_top_line"
+        app:cardCornerRadius="12dp">
+
+        <ImageView
+            android:id="@+id/iv_main_tour_list_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_example_user"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cv_main_tour_list_user"
+        android:text="홍대에서 함께하는 null"
+        android:fontFamily="@font/suite_bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/cv_main_tour_list_user"
+        android:layout_marginStart="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_date_time"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="@id/guide_top_end"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/cv_main_tour_list_user">
+
+        <ImageView
+            android:id="@+id/iv_main_tour_list_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_location_14"/>
+
+        <TextView
+            android:id="@+id/tv_main_tour_list_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="null 지역"
+            android:fontFamily="@font/pretendard_regular"
+            android:textSize="@dimen/item_main_tour_list_time"/>
+
+        <ImageView
+            android:id="@+id/iv_main_tour_list_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_clock_14"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_main_tour_list_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="null시간"
+            android:fontFamily="@font/pretendard_regular"
+            android:textSize="@dimen/item_main_tour_list_cost"/>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_user_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cv_main_tour_list_user"
+        app:layout_constraintStart_toStartOf="@id/guide_top_start"
+        app:layout_constraintEnd_toEndOf="@id/guide_top_end"
+        android:background="@drawable/rectangle_line_gray2_12"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_will_meet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/suite_bold"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/register_enjoy_title"/>
+
+        <TextView
+            android:id="@+id/tv_will_meet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:text="레이첼null"
+            app:layout_constraintTop_toBottomOf="@id/tv_will_meet"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_will_meet_name">
+
+            <TextView
+                android:id="@+id/tv_tour_contents_meeting_people_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tour_contents_meeting_people_language"
+                android:textSize="14sp"
+                android:fontFamily="@font/pretendard_medium"/>
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="7dp"
+                android:background="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_meeting_people_languages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="한국어, 영어, 중국어, null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/view_line"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cl_user_info"
+        app:layout_constraintStart_toStartOf="@id/guide_top_start"
+        app:layout_constraintEnd_toEndOf="@id/guide_top_end"
+        android:layout_marginTop="20dp"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/suite_bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_date_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="2025년 13월 12일 (수)"/>
+
+        <TextView
+            android:id="@+id/tv_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:layout_marginStart="4dp"
+            app:layout_constraintTop_toTopOf="@id/tv_date_day"
+            app:layout_constraintStart_toEndOf="@id/tv_date_day"
+            android:text="시간 협의 하기싫어"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintStart_toStartOf="@id/guide_top_start"
+        app:layout_constraintEnd_toEndOf="@id/guide_top_end"
+        app:layout_constraintBottom_toTopOf="@id/btn_possible_enjoy">
+
+        <TextView
+            android:id="@+id/tv_service_before"
+            android:text="@string/tour_service_before"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_service"
+            android:text="피플히어의 서비스 정책"
+            android:textSize="12sp"
+            android:layout_marginStart="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_service_after"
+            android:text="@string/tour_service_after"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_possible_enjoy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/tour_register_btn"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@drawable/making_tour_button_next"
+        app:layout_constraintStart_toStartOf="@id/guide_top_start"
+        app:layout_constraintEnd_toEndOf="@id/guide_top_end"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

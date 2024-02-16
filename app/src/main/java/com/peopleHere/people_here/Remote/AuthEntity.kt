@@ -1,7 +1,6 @@
 package com.peopleHere.people_here.Remote
 
 import com.google.gson.annotations.SerializedName
-import com.peopleHere.people_here.Data.CourseScheduleData
 import com.peopleHere.people_here.Data.MainCourseData
 import com.peopleHere.people_here.Data.MainData
 import com.peopleHere.people_here.Data.ScheduleParticipants
@@ -33,17 +32,15 @@ data class SignInRequest(//로그인에 보낼거
     //SerializedName이란:HTTP 통신 요청 들어갈때 저 문자열 안에 key값으로 매핑 들어감
 )
 
-data class SignInResponse<T>(//닉네임과 토큰 얘네 Shared에 저장되게 하기 putString으로
+data class SignInResponse(//닉네임과 토큰 얘네 Shared에 저장되게 하기 putString으로
     @SerializedName("userId")val userId:String,
-    @SerializedName("token")val token:T,
+    @SerializedName("jwtToken")val jwtToken:jwtToken,
 )
 
-data class JwtToken(
-    @SerializedName("grantType") val grantType: String,
+data class jwtToken(
     @SerializedName("accessToken") val accessToken: String,
     @SerializedName("refreshToken") val refreshToken: String
 )
-//로그인 되어있나 체크하는 req
 
 data class SignUpRequest(
     @SerializedName("email")val email:String,
@@ -106,3 +103,19 @@ data class BringCourseResponse (
 data class ChangeWishResponse(
     @SerializedName("result") val result : String
 )
+
+data class ChangePasswordRequest(
+    @SerializedName("password") val password: String
+)
+data class ChangePasswordResponse(
+    @SerializedName("success") val success: Boolean,
+    @SerializedName("code") val code : Int,
+    @SerializedName("status") val status : Int,
+    @SerializedName("message") val message : String,
+    @SerializedName("result") val result :Data
+)
+data class Data(
+    val dummy: Any? = null
+)
+
+

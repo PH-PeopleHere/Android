@@ -29,6 +29,7 @@ class CalendarActivity : AppCompatActivity() , UpcomingDateView{
     private var dateAdapter : DateAdapter ?= null
     private var calendarDialog : Dialog?= null
     private var tourId : Int = 0
+    private var tourName : String ?= null
     private var upcomingData : ArrayList<UpcomingDateResponse> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCalendarBinding.inflate(layoutInflater)
@@ -36,20 +37,20 @@ class CalendarActivity : AppCompatActivity() , UpcomingDateView{
         setContentView(binding.root)
 
         tourId = intent.getIntExtra("tourId",0)
+        tourName = intent.getStringExtra("tourName")
         initDataManager(tourId)
         Log.d("tourId",tourId.toString())
 
         binding.rvWeek.layoutManager = GridLayoutManager(this,7)
         binding.rvWeek.adapter = WeekAdapter(arrayListOf("일","월","화","수","목","금","토"))
+        binding.tvTitle.text = tourName
 
         binding.btnBack.setOnClickListener {
             finish()
         }
-
-        initRecyclerView()
     }
 
-    private fun initRecyclerView() {
+    private fun initRecyclerView(upcomingData : ArrayList<UpcomingDateResponse>) {
         val cal = Calendar.getInstance()
         val currentYear = cal.get(Calendar.YEAR)
         val currentMonth = cal.get(Calendar.MONTH) + 1 // Calendar.MONTH는 0부터 시작하므로 +1
@@ -66,7 +67,7 @@ class CalendarActivity : AppCompatActivity() , UpcomingDateView{
 
         }
 
-        monthAdapter = MonthAdapter(calendarList, object : DateAdapter.OnDateClickListener {
+        monthAdapter = MonthAdapter(calendarList, upcomingData, this@CalendarActivity, object : DateAdapter.OnDateClickListener {
             override fun onDateClick(date: String, month: Int, year: Int) {
                 showCalendarDialog(date, month, year)
             }
@@ -120,7 +121,8 @@ class CalendarActivity : AppCompatActivity() , UpcomingDateView{
 //        binding.tvReviewCount.text = upcomingData.size.toString()
 //        enjoyAdapter?.notifyDataSetChanged()
 
-        initRecyclerView()
+
+        initRecyclerView(upcomingData)
     }
 
     override fun UpcomingDateFailure(status: Int, message: String) {
