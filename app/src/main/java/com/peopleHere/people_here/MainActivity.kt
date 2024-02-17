@@ -1,13 +1,12 @@
 package com.peopleHere.people_here
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-
-import androidx.core.content.res.ResourcesCompat
 import com.peopleHere.people_here.ApplicationClass.Companion.X_ACCESS_TOKEN
 import com.peopleHere.people_here.Main.MainFragment
-import com.peopleHere.people_here.MyTour.MakingCourseFragment
+import com.peopleHere.people_here.MyTour.MakingCourseSearchActivity
 import com.peopleHere.people_here.Profile.ProfileFragment
 import com.peopleHere.people_here.TitleCategory.MakingTourFragment
 import com.peopleHere.people_here.WishList.WishFragment
@@ -38,17 +37,17 @@ class MainActivity : AppCompatActivity() {
                 }
 
 
-                R.id.menu_making_course -> {//코스 만들기 고쳤다아
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, MakingCourseFragment()).commit()
-                    return@setOnItemSelectedListener true
-                }
-
 //                R.id.menu_making_course -> {//코스 만들기 고쳤다아
-//                    val intent = Intent(this, OnBoardingActivity::class.java)
-//                    startActivity(intent)
+//                    supportFragmentManager.beginTransaction()
+//                        .replace(R.id.main_frm, MakingCourseFragment()).commit()
 //                    return@setOnItemSelectedListener true
 //                }
+
+                R.id.menu_making_course -> {//코스 만들기 고쳤다아
+                    val intent = Intent(this, MakingCourseSearchActivity::class.java)
+                    startActivity(intent)
+                    return@setOnItemSelectedListener true
+                }
 
                 R.id.menu_message -> {//
                     supportFragmentManager.beginTransaction()

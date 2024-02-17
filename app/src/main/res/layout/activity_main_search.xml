@@ -138,7 +138,7 @@
             android:id="@+id/rv_main_search_on_searching"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_main_search_on_searching"/>
+            tools:listitem="@layout/item_making_course_search" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

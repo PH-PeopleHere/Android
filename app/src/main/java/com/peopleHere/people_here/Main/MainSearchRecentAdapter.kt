@@ -8,14 +8,15 @@ import com.peopleHere.people_here.databinding.ItemMainSearchBinding
 
 class MainSearchRecentAdapter(var mainSearchData : ArrayList<MainSearchData>) : RecyclerView.Adapter<MainSearchRecentAdapter.ViewHolder>() {
 
-    inner class ViewHolder(val binding : ItemMainSearchBinding) : RecyclerView.ViewHolder(binding.root){
+        inner class ViewHolder(val binding: ItemMainSearchBinding) :
+            RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(searchRecentInfo : MainSearchData) {
-            binding.ivMainSearchRecent.setImageResource(searchRecentInfo.searchImage)
-            binding.tvMainSearchRecentRegion.text = searchRecentInfo.searchRegion
-            binding.tvMainSearchRecentPlace.text = searchRecentInfo.searchPlace
+            fun bind(searchRecentInfo: MainSearchData) {
+                binding.ivMainSearchRecent.setImageResource(searchRecentInfo.searchImage)
+                binding.tvMainSearchRecentRegion.text = searchRecentInfo.searchRegion
+                binding.tvMainSearchRecentPlace.text = searchRecentInfo.searchPlace
+            }
         }
-    }
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
