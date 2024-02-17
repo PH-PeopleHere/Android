@@ -130,9 +130,18 @@
     <string name="day_trip_contents_possible_enjoy">참여 가능한 일정·</string>
 
     <!--request_enjoy_activity 이름 정리-->
+    <string name="tour_request_participate">참여 요청하기</string>
     <string name="tour_register_btn">동의 및 요청하기</string>
     <string name="tour_service_before">약관을 동의함으로써</string>
     <string name="tour_service_after">에 동의합니다.</string>
+    <string name="tour_dates">일정</string>
+
+    <!--참여 요청 완료 이름 정리-->
+    <string name="btn_see_main">다른 데이트립 둘러보기</string>
+    <string name="btn_see_message">메시지에서 요청 내용 확인</string>
+    <string name="join_confirm_title">참여 요청이 완료되었습니다</string>
+    <string name="join_confirm_subtitle">24시간 내에 참여가 확정되지 않으면\n자동으로 요청이 철회돼요</string>
+
 
     <!--약관 동의 이름 정리 -->
     <string name="terms_of_service_1">법적 약관</string>
@@ -225,6 +234,11 @@
 
     <!--toast_category-->
     <string name="toast_category_string">\최대 3개까지 선택할 수 있어요 </string>
+    <!--fragment_profile_first 이름 정리 -->
+    <string name="fragment_profile_first_login1">\사람들과 만남을 계획하려면</string>
+    <string name="fragment_profile_first_login2">로그인하세요</string>
+    <string name="fragment_profile_first_signup">로그인 또는 회원가입</string>
+
 
     <!--activity_login_phone-->
     <string name="activity_login_phone_login">\로그인 또는 회원가입</string>

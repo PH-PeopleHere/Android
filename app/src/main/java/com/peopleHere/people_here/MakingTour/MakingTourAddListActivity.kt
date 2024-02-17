@@ -1,5 +1,6 @@
 package com.peopleHere.people_here.MakingTour
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
@@ -7,6 +8,8 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Gravity
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
@@ -33,7 +36,7 @@ class MakingTourAddListActivity : AppCompatActivity() , OnMapReadyCallback{
     private var addListData: ArrayList<MakingTourAddListData> = arrayListOf()
     private var isEditMode: Boolean = false
     private var sequenceDialog: Dialog? = null
-
+    private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +47,18 @@ class MakingTourAddListActivity : AppCompatActivity() , OnMapReadyCallback{
         mapFragment.getMapAsync(this)
 
         setContentView(binding.root)
+
+        activityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                // 데이터 받기
+                val data: Intent? = result.data
+                // 받은 데이터로 무엇인가를 함
+                val newData = data?.getStringExtra("key") // 'key'는 받아올 데이터의 키
+                // newData를 리스트에 추가
+            }
+        }
 
         initRecyclerView()
         initDummyData()
@@ -159,7 +174,7 @@ class MakingTourAddListActivity : AppCompatActivity() , OnMapReadyCallback{
                 MakingTourAddListData(5,R.drawable.img_example, "로니로티 이대점",1),
                 MakingTourAddListData(6,R.drawable.img_example, "로니로티 연대점",1),
                 MakingTourAddListData(7,R.drawable.img_example, "로니로티 고대점",1),
-                MakingTourAddListData(8,R.drawable.img_example, "로니로티 중대점",1),
+//                MakingTourAddListData(8,R.drawable.img_example, "로니로티 중대점",1),
                 MakingTourAddListData(8,R.drawable.img_example, "로니로티 중대점",2),
                 )
         )

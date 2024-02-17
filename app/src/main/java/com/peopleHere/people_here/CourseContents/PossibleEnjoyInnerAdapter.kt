@@ -64,6 +64,10 @@ class PossibleEnjoyInnerAdapter(
                 binding.llTimeExist.visibility = View.GONE
                 binding.tvTimeNone.visibility = View.VISIBLE
             }
+
+            binding.btnComingDateEnjoy.setOnClickListener {
+                itemClickListener.onItemClick(comingInfo)
+            }
         }
     }
 

@@ -1,14 +1,18 @@
 package com.peopleHere.people_here.Profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.peopleHere.people_here.Login.LoginEmailActivity
+import com.peopleHere.people_here.Login.LoginPhoneActivity
 import com.peopleHere.people_here.R
+import com.peopleHere.people_here.databinding.FragmentProfileFirstBinding
 
 class ProfileFirstFragment : Fragment() {
-
+    private lateinit var binding:FragmentProfileFirstBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,8 +22,15 @@ class ProfileFirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_first, container, false)
+        binding=FragmentProfileFirstBinding.inflate(layoutInflater)
+
+        binding.btnYes.setOnClickListener {
+            val intent = Intent(requireContext(), LoginPhoneActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        return binding.root
     }
 
 

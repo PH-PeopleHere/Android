@@ -6,7 +6,11 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.peopleHere.people_here.ApplicationClass.Companion.X_ACCESS_TOKEN
 import com.peopleHere.people_here.Main.MainFragment
+import com.peopleHere.people_here.MakingTour.MakingTourAddListActivity
+import com.peopleHere.people_here.MyTour.MakingCourseFragment
+import com.peopleHere.people_here.Profile.ProfileFirstFragment
 import com.peopleHere.people_here.MyTour.MakingCourseSearchActivity
+import com.peopleHere.people_here.Profile.DayTripManageActivity
 import com.peopleHere.people_here.Profile.ProfileFragment
 import com.peopleHere.people_here.TitleCategory.MakingTourFragment
 import com.peopleHere.people_here.WishList.WishFragment
@@ -44,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 //                }
 
                 R.id.menu_making_course -> {//코스 만들기 고쳤다아
-                    val intent = Intent(this, MakingCourseSearchActivity::class.java)
+                    val intent = Intent(this, MakingTourAddListActivity::class.java)
                     startActivity(intent)
                     return@setOnItemSelectedListener true
                 }
@@ -56,11 +60,25 @@ class MainActivity : AppCompatActivity() {
                 }
 
 
-                R.id.menu_profile -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, ProfileFragment()).commit()
+                R.id.menu_profile -> {//코스 만들기 고쳤다아
+                    val intent = Intent(this, DayTripManageActivity::class.java)
+                    startActivity(intent)
                     return@setOnItemSelectedListener true
                 }
+
+//                R.id.menu_profile -> {
+//                    if(X_ACCESS_TOKEN=="Authorization"){
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, ProfileFirstFragment()).commit()
+//                        return@setOnItemSelectedListener true
+//
+//                    }else{
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, ProfileFragment()).commit()
+//                        return@setOnItemSelectedListener true
+//
+//                    }
+//                }
 
                 else -> {
                     return@setOnItemSelectedListener true

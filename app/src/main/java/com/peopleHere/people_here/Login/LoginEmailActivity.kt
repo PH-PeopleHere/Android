@@ -39,6 +39,7 @@ class LoginEmailActivity : AppCompatActivity(), CheckEmailCallback {
         binding.cvPhone.setOnClickListener {
             val intent = Intent(this, LoginPhoneActivity::class.java)
             startActivity(intent)
+            finish()
         }
         questionEmail = binding.etEmail
         setContentView(binding.root)

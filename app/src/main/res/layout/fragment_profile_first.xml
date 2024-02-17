@@ -37,10 +37,54 @@
         app:layout_constraintWidth_percent="0.15"
         app:layout_constraintDimensionRatio="1:1"
         android:layout_marginTop="220dp"
-        android:src="@drawable/gear"
+        android:src="@drawable/user_avatar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tv_login"
+        style="@style/making_tour_headline_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/fragment_profile_first_login1"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/suite_bold"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tv_logi2"
+        style="@style/making_tour_headline_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_profile_first_login2"
+        android:textSize="18sp"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/suite_bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_yes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="300:52"
+        app:layout_constraintWidth_percent="0.83"
+        android:background="@drawable/add_list_next_button"
+        android:text="@string/fragment_profile_first_signup"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/pretendard_regular"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="51dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_logi2"/>
 
 
 

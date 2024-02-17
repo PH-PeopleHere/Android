@@ -47,9 +47,9 @@ class MainAdapter(val mainData : ArrayList<MainData>) : RecyclerView.Adapter<Mai
 
             if (tourListInfo.places.size > 1) {
                 val addCount = tourListInfo.places.size - 1
-                binding.tvMainTourListLocation.text = "${tourListInfo.places[0].address} 외 ${addCount}개"
+                binding.tvMainTourListLocation.text = "${tourListInfo.places[0].placeAddress} 외 ${addCount}개"
             } else if (tourListInfo.places.isNotEmpty()) {
-                binding.tvMainTourListLocation.text = tourListInfo.places[0].address
+                binding.tvMainTourListLocation.text = tourListInfo.places[0].placeAddress
             } else {
                 binding.tvMainTourListLocation.text = "위치 정보 없음"
             }

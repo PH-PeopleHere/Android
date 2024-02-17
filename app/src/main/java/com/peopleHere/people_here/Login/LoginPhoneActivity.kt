@@ -47,6 +47,7 @@ class LoginPhoneActivity : AppCompatActivity() {
 
             val intent = Intent(this, LoginEmailActivity::class.java)
             startActivity(intent)
+            finish()
 
         }
         binding.cvContinue.setOnClickListener {

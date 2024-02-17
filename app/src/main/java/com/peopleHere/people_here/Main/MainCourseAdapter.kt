@@ -33,11 +33,11 @@ class MainCourseAdapter(private val mainCourseData: ArrayList<MainCourseData>, p
     }
 
     private fun setImage2(context: Context, imageView: ImageView, tourListInfo: MainCourseData) {
-        if(tourListInfo.imageUrls[0] == "string") {
+        if(tourListInfo.placeImages[0] == "string") {
             imageView.setImageResource(R.drawable.img_example_contents)
         } else {
             Glide.with(context)
-                .load(tourListInfo.imageUrls[0])
+                .load(tourListInfo.placeImages[0])
                 .into(imageView)
         }
     }
@@ -58,7 +58,7 @@ class MainCourseAdapter(private val mainCourseData: ArrayList<MainCourseData>, p
 //            binding.ivMainTourListUserCourse.setImageResource(tourListInfo.id)
 //            binding.tvItemMainTourListRegion.text = tourListInfo.address
             setImage2(binding.root.context, binding.ivMainTourListUserCourse, tourListInfo)
-            binding.tvItemMainTourListRegion.text = tourListInfo.content
+            binding.tvItemMainTourListRegion.text = tourListInfo.placeName
         }
     }
 

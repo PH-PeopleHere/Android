@@ -9,10 +9,23 @@
       "client_info": {
         "mobilesdk_app_id": "1:751789187607:android:59312ed4dd0fbd3b157252",
         "android_client_info": {
-          "package_name": "com.peopleHere.people_here"
+          "package_name": "com.example.people_here"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "751789187607-7i4oopghojgtcdsntbru3ta9imu3nk9c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.people_here",
+            "certificate_hash": "071470c5a66193af5d0d127336041e9760c696d9"
+          }
+        },
+        {
+          "client_id": "751789187607-7lhl160p1g40ejfcmon7jucbdbu4e45m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCBXAt-L6FgqmBU7nkPE0e3vG_GJV6cBVQ"
@@ -20,7 +33,49 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751789187607-7lhl160p1g40ejfcmon7jucbdbu4e45m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751789187607:android:c472324712b301ff157252",
+        "android_client_info": {
+          "package_name": "com.peopleHere.people_here"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751789187607-pq84r5e7k1kpef68cu83jr1jsupdtb2c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.peopleHere.people_here",
+            "certificate_hash": "071470c5a66193af5d0d127336041e9760c696d9"
+          }
+        },
+        {
+          "client_id": "751789187607-7lhl160p1g40ejfcmon7jucbdbu4e45m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBXAt-L6FgqmBU7nkPE0e3vG_GJV6cBVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751789187607-7lhl160p1g40ejfcmon7jucbdbu4e45m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

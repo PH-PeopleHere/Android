@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile.CalendarActivity">
@@ -88,5 +89,165 @@
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="@id/guide_end"/>
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/fl_calendar_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_12_white"
+            android:paddingTop="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_handle_bar"
+                android:layout_width="48dp"
+                android:layout_height="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.13"
+                app:layout_constraintDimensionRatio="48:4"
+                android:background="@drawable/calendar_gray6_12"/>
+
+            <LinearLayout
+                android:id="@+id/ll_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_handle_bar"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/tv_dialog_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text="null"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_dialog_month_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text="@string/text_month"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_dialog_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text="null"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_dialog_day_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text="@string/text_day"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tl_enter_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_date"
+                app:tabIndicatorAnimationMode="linear"
+                app:tabIndicatorFullWidth="true"
+                app:tabIndicator="@drawable/rectangle_line_orange3_12"
+                app:tabRippleColor="@color/white"
+                android:background="@drawable/rectangle_gray15_12"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_date_container"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:paddingBottom="44dp"
+                app:layout_constraintTop_toBottomOf="@id/tl_enter_date">
+
+                <LinearLayout
+                    android:id="@+id/ll_exist_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/btn_setting_time">
+
+                    <TextView
+                        android:id="@+id/tv_exist_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="여기다가 시간 적힐듯"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/pretendard_semibold"/>
+
+                    <ImageView
+                        android:id="@+id/ic_edit_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_edit_pencil"
+                        android:layout_marginStart="4dp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_empty_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/btn_setting_time"
+                    android:text="여기다가\n시간 적힐듯"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/pretendard_semibold"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_setting_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/block_enjoy_button"
+                    android:textSize="14sp"
+                    android:lineHeight="22sp"
+                    android:textColor="@color/Gray6"
+                    android:lineSpacingExtra="5sp"
+                    android:layout_marginTop="27dp"
+                    android:drawableStart="@drawable/ic_block_enjoy"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/pretendard_bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

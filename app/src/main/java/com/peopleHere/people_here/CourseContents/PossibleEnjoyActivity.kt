@@ -68,9 +68,9 @@ class PossibleEnjoyActivity : AppCompatActivity() , UpcomingDateView {
     private fun initRecyclerView() {
         val enjoyAdapter = PossibleEnjoyAdapter(classifiedData, tourTime, object : PossibleEnjoyInnerAdapter.OnItemClickListener {
             override fun onItemClick(dateInfo: UpcomingDateResponse) {
-                val intent = Intent(this@PossibleEnjoyActivity, PossibleEnjoyActivity::class.java)
+                val intent = Intent(this@PossibleEnjoyActivity, RequestEnjoyActivity::class.java)
                 intent.putExtra("dates",dateInfo.date)
-                intent.putExtra("tourId",dateInfo.id)
+                intent.putExtra("tourDatesId",dateInfo.id)
                 startActivity(intent)
             }
         })

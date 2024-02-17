@@ -18,16 +18,16 @@ import com.google.firebase.auth.PhoneAuthProvider
 import java.util.concurrent.TimeUnit
 
 class VerifyPhoneActivity : AppCompatActivity() {
-    var verificationId =""
+    var verificationId = ""
     lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityVerifyPhoneBinding
-    var checkContinue:Boolean=false
+    var checkContinue: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityVerifyPhoneBinding.inflate(layoutInflater)
+        binding = ActivityVerifyPhoneBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        auth=FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
         val receivedIntent = intent
 
         var phoneNumber = receivedIntent.getStringExtra("phone_number") // 정보 추출
@@ -37,23 +37,23 @@ class VerifyPhoneActivity : AppCompatActivity() {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {//인증번호
                 // 인증 코드 확인 완료
-                Log.d("usercode",credential.smsCode.toString())
+                Log.d("usercode", credential.smsCode.toString())
                 Toast.makeText(this@VerifyPhoneActivity, "성공", Toast.LENGTH_SHORT).show()
             }
+
             override fun onVerificationFailed(e: FirebaseException) {
                 // 인증 실패 처리
                 Toast.makeText(this@VerifyPhoneActivity, "실패", Toast.LENGTH_SHORT).show()
                 Log.d("usercode_err", "인증 실패: ${e.message}")
             }
 
-            override fun onCodeSent(verificationId: String, forceResendingToken: PhoneAuthProvider.ForceResendingToken) {
+            override fun onCodeSent(
+                verificationId: String,
+                forceResendingToken: PhoneAuthProvider.ForceResendingToken
+            ) {
                 Toast.makeText(this@VerifyPhoneActivity, "ㅇㅋ", Toast.LENGTH_SHORT).show()
-                Log.d("usercode_Codesent", "인증 ㅇㅋ")
-                // 사용자에게 코드 입력 UI를 표시하고, 입력받은 코드를 저장
 
-                // 저장된 인증 ID와 입력받은 코드로 자격 증명(credential) 생성
-/*
-                val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(verificationId,
+                /*val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(verificationId,
                     binding.etNumber.text.toString()
                 )//사용자 입력값을 그럼 어떻게 받아야 할지??
 
@@ -68,7 +68,7 @@ class VerifyPhoneActivity : AppCompatActivity() {
 
         }
         //번호는 잘 와지는데 흠
-        if(phoneNumber!=null){
+        if (phoneNumber != null) {
             val options = PhoneAuthOptions.newBuilder(auth)//firebase인증
                 .setPhoneNumber(phoneNumber.toString())       // 전화번호 설정
                 .setTimeout(60L, TimeUnit.SECONDS) // 타임아웃 설정
@@ -78,14 +78,14 @@ class VerifyPhoneActivity : AppCompatActivity() {
             PhoneAuthProvider.verifyPhoneNumber(options)
         }
         binding.btnContinue.setOnClickListener {
-            if(checkContinue){//6자리면 작동되게 하는?
-                val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(verificationId,
+            if (checkContinue) {//6자리면 작동되게 하는?
+                val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(
+                    verificationId,
                     binding.etNumber.text.toString()
                 ) //인자값을 뭘 줘야하지 그럼 흠
                 signInWithPhoneAuthCredential(credential)//여기부터 다시
             }
         }
-
 
 
     }
@@ -100,8 +100,7 @@ class VerifyPhoneActivity : AppCompatActivity() {
 
                     val intent = Intent(this, SignUpActivity::class.java)
                     startActivity(intent)
-                }
-                else {
+                } else {
                     //인증실패
                 }
             }
@@ -109,7 +108,7 @@ class VerifyPhoneActivity : AppCompatActivity() {
 
     private fun ButtonOn() {
         binding.etNumber.addTextChangedListener(object : TextWatcher {
-            var maxtext=""
+            var maxtext = ""
             override fun beforeTextChanged(
                 charSequence: CharSequence,
                 i: Int,
@@ -121,17 +120,15 @@ class VerifyPhoneActivity : AppCompatActivity() {
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
             }
 
-
-
             override fun afterTextChanged(editable: Editable) {
 
                 if (editable.length == 6) {//6자면 검정색
                     val phoneNumberWithHyphen = editable.toString() // 하이푼이 포함된 전화번호 문자열
                     binding.btnContinue.setBackgroundResource(com.peopleHere.people_here.R.drawable.making_tour_button_next)
-                    checkContinue= true
+                    checkContinue = true
                 } else {//클릭 불가능 하게도 설정하기
                     binding.btnContinue.setBackgroundResource(com.peopleHere.people_here.R.drawable.making_tour_button_close)//설정 회색으로
-                    checkContinue=false
+                    checkContinue = false
                 }
             }
         })

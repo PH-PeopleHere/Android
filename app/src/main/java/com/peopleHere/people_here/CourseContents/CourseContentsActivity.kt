@@ -169,7 +169,7 @@ class CourseContentsActivity : AppCompatActivity() , CourseContentsView, Upcomin
     private fun initCourseInfo(courseData : CourseContentsResponse) {
         // contents 젤 위 사진
         val newImgList = courseData.places.mapNotNull {
-            it.imageUrls.firstOrNull() }
+            it.placeImages.firstOrNull() }
         (binding.vpTourContents.adapter as CourseContentsImageAdapter).updateImages(newImgList)
 
         initIndicators()
@@ -178,7 +178,7 @@ class CourseContentsActivity : AppCompatActivity() , CourseContentsView, Upcomin
         // 코스 정보
         binding.tvTourTitle.text = courseData.tourName
 
-        val addressList = courseData.places.map { it.address }
+        val addressList = courseData.places.map { it.placeAddress }
         binding.tvTourRegion.text = if (addressList.size > 1) {
             "${addressList.first()} 외 ${addressList.size - 1}개"
         } else {

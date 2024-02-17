@@ -49,4 +49,13 @@ interface RetrofitInterface {
         @Body request: String
     ): Call<ChangePasswordResponse>
 
+    @GET("api/tour-dates/{tourDateId}/date")
+    fun requestEnjoyInfo(@Path("tourDateId") tourDateId : Int)
+            : Call<BaseResponse<RequestEnjoyResponse>>
+
+    @POST("api/tour-dates/{tourDateId}/join")
+    fun joinConfirmInfo(@Path("tourDateId") tourDateId : Int)
+            : Call<BaseResponse<JoinConfirmResponse>>
+
+
 }

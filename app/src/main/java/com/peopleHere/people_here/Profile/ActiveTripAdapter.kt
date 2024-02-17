@@ -25,8 +25,8 @@ class ActiveTripAdapter(val context : Context, val dayTripData : ArrayList<Bring
         fun bind(item : BringCourseResponse) {
             if (item.status == "ACTIVE") {
                 binding.tvTitle.text = item.tourName
-                if (item.places.isNotEmpty() && item.places[0].imageUrls.isNotEmpty()) {
-                    val imageUrl = item.places[0].imageUrls[0]
+                if (item.places.isNotEmpty() && item.places[0].placeImages.isNotEmpty()) {
+                    val imageUrl = item.places[0].placeImages[0]
                     Glide.with(context)
                         .load(imageUrl)
                         .into(binding.ivTripImage)
@@ -39,9 +39,9 @@ class ActiveTripAdapter(val context : Context, val dayTripData : ArrayList<Bring
 
                 if (item.places.size > 1) {
                     val addCount = item.places.size - 1
-                    binding.tvMainTourListLocation.text = "${item.places[0].address} 외 ${addCount}개"
+                    binding.tvMainTourListLocation.text = "${item.places[0].placeAddress} 외 ${addCount}개"
                 } else if (item.places.isNotEmpty()) {
-                    binding.tvMainTourListLocation.text = item.places[0].address
+                    binding.tvMainTourListLocation.text = item.places[0].placeAddress
                 } else {
                     binding.tvMainTourListLocation.text = "위치 정보 없음"
                 }

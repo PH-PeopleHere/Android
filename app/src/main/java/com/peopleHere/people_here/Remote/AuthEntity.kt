@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName
 import com.peopleHere.people_here.Data.MainCourseData
 import com.peopleHere.people_here.Data.MainData
 import com.peopleHere.people_here.Data.ScheduleParticipants
+import com.peopleHere.people_here.Data.TourLeaderData
+import java.io.Serializable
 
 
 //여기에 request, response 데이터 클래스 정의
@@ -65,8 +67,8 @@ data class CourseContentsResponse (
     @SerializedName("userId") val userId: String,
     @SerializedName("userName") val userName: String,
     @SerializedName("userImageUrl") val userImageUrl: String,
-    @SerializedName("time") val time: Int,
-    @SerializedName("content") val content : String,
+    @SerializedName("tourTime") val time: Int,
+    @SerializedName("tourContent") val content : String,
     @SerializedName("places") val places: ArrayList<MainCourseData>,
     @SerializedName("categoryNames") val categoryNames: List<String>,
     @SerializedName("participants") val participants: List<Any>,
@@ -76,12 +78,12 @@ data class CourseContentsResponse (
 )
 
 data class UpcomingDateResponse (
-    @SerializedName("id") val id : Int,
+    @SerializedName("tourDateId") val id : Int,
     @SerializedName("date") val date : String,
     @SerializedName("time") val time : String?,
     @SerializedName("status") val status : String,
     @SerializedName("participants") val participants : ArrayList<ScheduleParticipants>
-)
+) : Serializable
 
 data class BringCourseResponse (
     @SerializedName("tourId") val tourId: Int,
@@ -89,8 +91,8 @@ data class BringCourseResponse (
     @SerializedName("userId") val userId: String,
     @SerializedName("userName") val userName: String,
     @SerializedName("userImageUrl") val userImageUrl: String,
-    @SerializedName("time") val time: String,
-    @SerializedName("content") val content : String,
+    @SerializedName("tourTime") val time: String,
+    @SerializedName("tourContent") val content : String,
     @SerializedName("places") val places: ArrayList<MainCourseData>,
     @SerializedName("categoryNames") val categoryNames: List<String>,
     @SerializedName("participants") val participants: List<Any>,
@@ -114,6 +116,26 @@ data class ChangePasswordResponse(
     @SerializedName("message") val message : String,
     @SerializedName("result") val result :Data
 )
+
+data class RequestEnjoyResponse(
+    @SerializedName("tourId") val tourId: Int,
+    @SerializedName("tourName") val tourName : String,
+    @SerializedName("tourTime") val tourTime : Int,
+    @SerializedName("tourLeader") val tourLeader : TourLeaderData,
+    @SerializedName("places") val places : ArrayList<MainCourseData>,
+    @SerializedName("date") val date :String,
+    @SerializedName("time") val time :String?,
+    @SerializedName("status") val status :String
+)
+
+data class JoinConfirmResponse(
+    @SerializedName("success") val success: Boolean,
+    @SerializedName("code") val code : Int,
+    @SerializedName("status") val status : Int,
+    @SerializedName("message") val message : String,
+    @SerializedName("timestamp") val timestamp :String
+)
+
 data class Data(
     val dummy: Any? = null
 )

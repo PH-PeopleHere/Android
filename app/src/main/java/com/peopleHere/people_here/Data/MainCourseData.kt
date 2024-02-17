@@ -1,11 +1,14 @@
 package com.peopleHere.people_here.Data
 
+import android.graphics.Point
+import com.google.android.gms.maps.model.LatLng
 import com.google.gson.annotations.SerializedName
 
 data class MainCourseData(
-    @SerializedName("id") val id: Int,
-    @SerializedName("content") val content: String,
-    @SerializedName("imageUrls") val imageUrls: List<String>,
-    @SerializedName("address") val address: String,
-    @SerializedName("order") val order: Int
+    @SerializedName("placeId") val placeId: Int,
+    @SerializedName("placeName") val placeName: String,
+    @SerializedName("placeImages") val placeImages: List<String>,
+    @SerializedName("placeAddress") val placeAddress: String,
+    @SerializedName("latLng") val latLng : LatLng,
+    @SerializedName("placeOrder") val placeOrder: Int
 )
