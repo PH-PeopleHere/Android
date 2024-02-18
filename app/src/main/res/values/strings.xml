@@ -343,7 +343,47 @@
     <string name="activity_password_reset_title">비밀번호 재설정</string>
     <string name="activity_password_reset_input">새로운 비밀번호를 입력하세요.</string>
 
+    <!--    profile 다가오는 만남 이름 정리-->
+    <string name="profile_item_product_title">홍대에서 만나는 디자인과 예술</string>
+    <string name="profile_item_product_user">레이첼</string>
+    <string name="profile_item_product_user_type">여행자</string>
+    <string name="profile_item_prduct_when_meet">오늘 만나요</string>
+    <string name="profile_item_product_date">2023년 11월 11일 오전 9시</string>
+    <string name="profile_item_product_place">건국대학교</string>
+    <string name="profile_item_product_place_detail">서울특별시 광진구 능동로 120</string>
 
+    <!--    profile 지난 만남 이름 정리-->
+    <string name="profile_item_past_meet_title">홍대에서 만나는 디자인과 예술</string>
+    <string name="profile_item_past_meet_date">2023년 11월 11일</string>
+    <string name="profile_item_past_meet_user">알렉스</string>
+    <string name="profile_item_past_meet_user_type">데이트립리더</string>
+
+    <!--    fragment_profile 이름 정리-->
+    <string name="profile_fragment_profile">프로필</string>
+    <string name="profile_fragment_name">레이첼</string>
+    <string name="profile_fragment_myprofile">나의 프로필</string>
+    <string name="profile_fragment_mydaytrip">나의 데이트립</string>
+    <string name="profile_fragment_product_title">다가오는 만남</string>
+    <string name="profile_fragment_past_meet">지난 만남</string>
+
+    <!--    activity_profile_participant_info 이름 정리 -->
+    <string name="activity_profile_participant_info_title">다가오는 만남</string>
+    <string name="activity_profile_participant_info_product_title">홍대에서 만나는 디자인과 예술</string>
+    <string name="activity_profile_participant_info_region">성동구 외 1개</string>
+    <string name="activity_profile_participant_info_clock">4시간</string>
+    <string name="activity_profile_participant_info_meet_person">만나게 될 사람</string>
+    <string name="activity_profile_participant_info_meet_person_name">레이첼</string>
+    <string name="activity_profile_participant_info_meet_person_lang">구사언어</string>
+    <string name="activity_profile_participant_info_meet_person_lang_details">한국어, 영어, 스페인어, 일본어, 중국어, n개국어를 할 수 있는 능력자</string>
+    <string name="activity_profile_participant_info_schedule">일정</string>
+    <string name="activity_profile_participant_info_schedule_details">2023년 11월 11일 (수) 오전 9시</string>
+    <string name="activity_profile_participant_info_orange">내일 만나요</string>
+    <string name="activity_profile_participant_info_place">처음 만나는 장소</string>
+    <string name="activity_profile_participant_info_place_details_1">건국대학교</string>
+    <string name="activity_profile_participant_info_place_details_2">서울특별시 광진구 능동로 120</string>
+    <string name="activity_profile_participant_info_place_order_1">건국대학교</string>
+    <string name="activity_profile_participant_info_place_order_2">서울특별시 광진구 아차산로 225</string>
+    <string name="activity_profile_participant_info_cancel">만남 취소하기</string>
     <!--profile 캘린더 이름 정리 -->
     <string-array name="week_label">
         <item name="monday">월</item>

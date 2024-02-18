@@ -24,6 +24,7 @@
      android:id="@+id/item1Layout"
      android:layout_width="0dp"
      android:layout_height="wrap_content"
+     android:layout_marginTop="20dp"
      app:layout_constraintEnd_toEndOf="@id/guide_end"
      app:layout_constraintStart_toStartOf="@id/guide_start"
      app:layout_constraintTop_toTopOf="parent"
@@ -35,10 +36,11 @@
          android:id="@+id/item1Layout_rv_tv"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:text="홍대에서 만나는 디자인과 예술"
+         android:text="@string/profile_item_product_title"
+         android:textSize="16sp"
+         android:fontFamily="@font/suite_bold"
          app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         />
+         app:layout_constraintTop_toTopOf="parent" />
 
      <androidx.cardview.widget.CardView
          android:id="@+id/iv_item_home_thumbnail"
@@ -75,16 +77,19 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="레이첼"
-                android:textSize="16dp"
+                android:text="@string/profile_item_product_user"
+                android:textSize="14sp"
+                android:fontFamily="@font/pretendard_medium"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="여행자"
-                android:textColor="@color/black"/>
+                android:text="@string/profile_item_product_user_type"
+                android:textSize="12sp"
+                android:fontFamily="@font/pretendard_regular"
+                android:textColor="@color/black" />
 
 
 
@@ -99,16 +104,19 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@id/iv_item_home_thumbnail"
             app:layout_constraintEnd_toEndOf="parent">
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/ll_btn_meet_1_today"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="오늘 만나요"
+                android:layout_width="99dp"
+                android:layout_height="34dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:text="@string/profile_item_prduct_when_meet"
                 android:textColor="@color/Gray1"
-                android:background="@color/Orange5"
+                android:fontFamily="@font/pretendard_medium"
+                android:background="@drawable/profile_date"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                />
+                android:layout_alignParentTop="true" />
 
         </LinearLayout>
 
@@ -133,18 +141,19 @@
          android:layout_marginTop="16dp"
          app:layout_constraintTop_toBottomOf="@id/line"/>
 
-    <TextView
-        android:id="@+id/tv_date"
-        style="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2023년 11월 11일 오전 9시"
-        android:textStyle="bold"
-        android:textColor="@color/Gray7"
-        app:layout_constraintStart_toEndOf="@id/iv_calendar_icon"
-        android:layout_marginStart="8dp"
-        app:layout_constraintTop_toBottomOf="@id/line"
-        android:layout_marginTop="16dp"/>
+     <TextView
+         android:id="@+id/tv_date"
+         style="bold"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/profile_item_product_date"
+         android:textSize="14sp"
+         android:fontFamily="@font/pretendard_medium"
+         android:textColor="@color/Gray7"
+         app:layout_constraintStart_toEndOf="@id/iv_calendar_icon"
+         android:layout_marginStart="8dp"
+         app:layout_constraintTop_toBottomOf="@id/line"
+         android:layout_marginTop="16dp" />
 
      <ImageView
          android:id="@+id/iv_flag_icon"
@@ -163,25 +172,27 @@
          app:layout_constraintStart_toEndOf="@id/iv_flag_icon"
          app:layout_constraintTop_toTopOf="@id/iv_flag_icon">
 
-    <TextView
-        android:id="@+id/ll_places_tv_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="건국대학교"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/Gray8"/>
+         <TextView
+             android:id="@+id/ll_places_tv_place"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/profile_item_product_place"
+             android:textSize="14sp"
+             android:fontFamily="@font/pretendard_medium"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             android:textColor="@color/Gray8" />
 
-    <TextView
-        android:id="@+id/tv_place_small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="서울특별시 광진구 능동로 120"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_places_tv_place"
-        android:textColor="@color/Gray6"
-        />
+         <TextView
+             android:id="@+id/tv_place_small"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/profile_item_product_place_detail"
+             android:textSize="12sp"
+             android:fontFamily="@font/pretendard_regular"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/ll_places_tv_place"
+             android:textColor="@color/Gray6" />
  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

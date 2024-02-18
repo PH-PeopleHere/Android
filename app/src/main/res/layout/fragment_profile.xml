@@ -31,10 +31,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/suite_bold"
             android:gravity="top"
             android:lineSpacingExtra="5sp"
-            android:text="프로필"
-            android:translationY="-2.52sp"
+            android:text="@string/profile_fragment_profile"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@id/guide_start"
             app:layout_constraintTop_toTopOf="parent"
 
@@ -74,101 +75,110 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="11dp"
+            android:fontFamily="@font/suite_bold"
             android:gravity="center"
-            android:text="레이첼"
+            android:text="@string/profile_fragment_name"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@id/cv_profile"
             app:layout_constraintStart_toStartOf="@id/cv_profile"
             app:layout_constraintTop_toBottomOf="@id/cv_profile" />
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_my_profile"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginStart="52dp"
             android:layout_marginEnd="30dp"
-            android:backgroundTint="@color/Gray7"
-            android:text="나의 프로필"
+            android:background="@drawable/cost_next_button"
+            android:drawableStart="@drawable/profile_person"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="7dp"
+            android:text="@string/profile_fragment_myprofile"
             android:textColor="@color/white"
-            app:cornerRadius="4dp"
-            app:icon="@drawable/profile_person"
-            app:layout_constraintEnd_toStartOf="@id/btn_my_profile_1"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_my_profile_1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cv_tv_name" />
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_my_profile_1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="52dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="7dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/Gray7"
-            android:text="나의 데이트립"
+            android:background="@drawable/cost_next_button"
+            android:text="@string/profile_fragment_mydaytrip"
             android:textColor="@color/white"
-            app:cornerRadius="4dp"
-            app:icon="@drawable/profile_person"
+            android:textSize="12sp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:drawableStart="@drawable/profile_map"
+            android:drawablePadding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_my_profile"
-            app:layout_constraintTop_toBottomOf="@id/cv_tv_name" />
-
-        <ImageView
-            android:id="@+id/iv_my_profile_icon_person"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="7dp"
-            android:src="@drawable/profile_person"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/btn_my_profile"
-            app:layout_constraintStart_toStartOf="@id/btn_my_profile"
-            app:layout_constraintTop_toTopOf="@id/btn_my_profile" />
-
-        <TextView
-            android:id="@+id/tv_my_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="16dp"
-            android:text="내 프로필"
-            android:textColor="@color/white"
-            android:visibility="gone"
-
-            app:layout_constraintBottom_toBottomOf="@id/btn_my_profile"
-            app:layout_constraintEnd_toEndOf="@id/btn_my_profile"
-            app:layout_constraintStart_toStartOf="@id/iv_my_profile_icon_person"
-            app:layout_constraintTop_toTopOf="@id/btn_my_profile"
+            app:layout_constraintTop_toBottomOf="@id/cv_tv_name"
 
             />
 
-        <ImageView
-            android:id="@+id/profile_cutting_line"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_dash_line1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:color="@color/Gray1.5"
-            android:src="@drawable/profile_cutting_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_my_profile" />
+            app:layout_constraintTop_toBottomOf="@id/btn_my_profile">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:src="@drawable/dash_line_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="8.5dp"
+                android:layout_height="17dp"
+                android:background="@drawable/half_circle_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="8.5dp"
+                android:layout_height="17dp"
+                android:background="@drawable/half_circle_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <TextView
             android:id="@+id/tv_profile_next_meet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="다가오는 만남"
+            android:text="@string/profile_fragment_product_title"
+            android:textSize="16sp"
+            android:fontFamily="@font/suite_bold"
             app:layout_constraintStart_toStartOf="@id/guide_start"
-            app:layout_constraintTop_toBottomOf="@id/profile_cutting_line" />
+            app:layout_constraintTop_toBottomOf="@id/cl_dash_line1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_profile_next_meet"
             app:layout_constraintBottom_toTopOf="@id/tv_profile_past_meet"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_next_meet"
             tools:listitem="@layout/profile_item_product" />
-
 
 
         <TextView
@@ -176,9 +186,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
-            android:text="지난만남"
+            android:text="@string/profile_fragment_past_meet"
+            android:textSize="16sp"
+            android:fontFamily="@font/suite_bold"
             app:layout_constraintStart_toStartOf="@id/guide_start"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"/>
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

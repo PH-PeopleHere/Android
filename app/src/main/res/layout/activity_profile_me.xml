@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.ProfileMeActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_profile_participant_info_top_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_profile_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_main_left_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_profile_comming_meet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/suite_bold"
+            android:text="나의 프로필"
+            android:textColor="@color/Gray8"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile_pencil"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Gray1.5"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_profile_participant_info_top_appbar" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_profile_me"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_item_home_thumbnail_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_olivia"
+            app:layout_constraintDimensionRatio="100:100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.29" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/suite_bold"
+            android:text="레이첼"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_item_home_thumbnail_img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_profile_me_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_profile_me">
+
+        <ImageView
+            android:id="@+id/iv_profile_info_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile_icon_lang"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_profile_info_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="구사언어"
+            android:textColor="@color/Gray6"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_profile_info_icon"
+            app:layout_constraintStart_toEndOf="@id/iv_profile_info_icon"
+            app:layout_constraintTop_toTopOf="@id/iv_profile_info_icon" />
+
+        <ImageView
+            android:id="@+id/iv_profile_mini_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:src="@drawable/profile_mini_line"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_info_type"
+            app:layout_constraintStart_toEndOf="@id/tv_profile_info_type"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_info_type" />
+
+        <TextView
+            android:id="@+id/tv_profile_info_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="한국어, 영어, 스페인어"
+            android:textColor="@color/Gray6"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_info_type"
+            app:layout_constraintStart_toEndOf="@id/iv_profile_mini_line"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_info_type" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_dash_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        app:layout_constraintTop_toBottomOf="@id/cl_profile_me_info">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:src="@drawable/dash_line_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="8.5dp"
+            android:layout_height="17dp"
+            android:background="@drawable/half_circle_left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="8.5dp"
+            android:layout_height="17dp"
+            android:background="@drawable/half_circle_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_self_introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/suite_bold"
+        android:text="자기소개"
+        android:textColor="@color/Gray7"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/cl_dash_line1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_tv_self_introduce"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rectangle_gray1_12"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_self_introduce">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="서울 26년 토박이 쩝쩝박사 🍕🧀🥖\n26년차 경력으로 맛집을 소개드려요. 많이 걷고 맛있게 먹고 즐겁게 수다 떠는 것을 좋아해요.  신나고 맛있는 한국 여행을 원한다면 저와 함께 떠나요!"
+            android:textColor="@color/Gray7"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_tour_qna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/suite_bold"
+        android:text="여행 문답"
+        android:textColor="@color/Gray7"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/cl_tv_self_introduce" />
+
+    <TextView
+        android:id="@+id/tv_tour_qna_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/suite_bold"
+        android:text="Q. 가장 기억에 남는 여행지는?"
+        android:textColor="@color/Orange5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_tour_qna" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_tour_answer_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rectangle_gray1_12"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_tour_qna_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="이탈리아의 로마, Trastevere\n
+해질 무렵 테베레 강을 건너 광장으로 가면 달빛 아래 매일 밤 끊이지 않는 음악과 거리 공연, 춤추는 사람들... 근처 가게에서 바로 구워주는 따끈한 피자 한 조각과 맥주를 손에 들고 광장에 앉아 붐비는 사람들 틈에 있다 보면 꼭 그곳이 나의 고향인 것처럼 느껴졌어요."
+            android:textColor="@color/Gray7"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_tour_qna_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/suite_bold"
+        android:text="Q. 식도락 vs 쇼핑"
+        android:textColor="@color/Orange5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/cl_tour_answer_1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_tour_answer_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rectangle_gray1_12"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/cl_tour_answer_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="금강산도 식후경... 여행은 역시 각지의 산해진미를 맛보는 재미 아니겠어요🤤 하지만 쇼핑도 포기 모태...!"
+            android:textColor="@color/Gray7"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/suite_bold"
+        android:text="레이첼 님에 대한 후기"
+        android:textColor="@color/Gray7"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/cl_tour_answer_2" />
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_review">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="302dp"
+            android:layout_height="180dp"
+            android:background="@drawable/rectangle_line_gray2_12"
+            android:padding="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_review_profile_img"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="32:32"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.11">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/tv_review_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="알렉스"
+                android:textColor="@color/Gray6"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/civ_review_profile_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_review_profile_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="여행자"
+                android:textColor="@color/Gray6"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tv_review_profile_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_review_profile_name" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="2023년 12월"
+                android:textColor="@color/Gray7"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_review_profile_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="레이첼은 정말 밝고 친절하고 열정적이고 소통 능력이 뛰어나면 배려심이 많고 호기심이 지대하고 늘 대화에 적극적으로 호응해 오며 웃음이 떠나지 않는 긍정적인 에너지의 멋진 사람이었습니다."
+                android:textSize="14sp"
+                android:textColor="@color/Gray7"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_review_plus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_review_plus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="후기 10개 모두 보기"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/pretendard_medium"
+            android:background="@drawable/rectangle_gray7_10"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
