@@ -112,59 +112,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cl_profile_me_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_profile_me">
+        app:layout_constraintTop_toBottomOf="@id/cl_profile_me"
+        tools:listitem="@layout/item_profile_info"/>
 
-        <ImageView
-            android:id="@+id/iv_profile_info_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/profile_icon_lang"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_profile_info_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:fontFamily="@font/pretendard_medium"
-            android:text="구사언어"
-            android:textColor="@color/Gray6"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_profile_info_icon"
-            app:layout_constraintStart_toEndOf="@id/iv_profile_info_icon"
-            app:layout_constraintTop_toTopOf="@id/iv_profile_info_icon" />
-
-        <ImageView
-            android:id="@+id/iv_profile_mini_line"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:src="@drawable/profile_mini_line"
-            app:layout_constraintBottom_toBottomOf="@id/tv_profile_info_type"
-            app:layout_constraintStart_toEndOf="@id/tv_profile_info_type"
-            app:layout_constraintTop_toTopOf="@id/tv_profile_info_type" />
-
-        <TextView
-            android:id="@+id/tv_profile_info_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:fontFamily="@font/pretendard_medium"
-            android:text="한국어, 영어, 스페인어"
-            android:textColor="@color/Gray6"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_profile_info_type"
-            app:layout_constraintStart_toEndOf="@id/iv_profile_mini_line"
-            app:layout_constraintTop_toTopOf="@id/tv_profile_info_type" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -323,120 +281,122 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tv_review"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/suite_bold"
-        android:text="레이첼 님에 대한 후기"
-        android:textColor="@color/Gray7"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/cl_tour_answer_2" />
-
-    <HorizontalScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_review">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="302dp"
-            android:layout_height="180dp"
-            android:background="@drawable/rectangle_line_gray2_12"
-            android:padding="16dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/civ_review_profile_img"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="32:32"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.11">
-
-            </de.hdodenhof.circleimageview.CircleImageView>
-
-            <TextView
-                android:id="@+id/tv_review_profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/pretendard_medium"
-                android:text="알렉스"
-                android:textColor="@color/Gray6"
-                android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@id/civ_review_profile_img"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_review_profile_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/pretendard_regular"
-                android:text="여행자"
-                android:textColor="@color/Gray6"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/tv_review_profile_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_review_profile_name" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/pretendard_regular"
-                android:text="2023년 12월"
-                android:textColor="@color/Gray7"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_review_profile_name" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/pretendard_medium"
-                android:text="레이첼은 정말 밝고 친절하고 열정적이고 소통 능력이 뛰어나면 배려심이 많고 호기심이 지대하고 늘 대화에 적극적으로 호응해 오며 웃음이 떠나지 않는 긍정적인 에너지의 멋진 사람이었습니다."
-                android:textSize="14sp"
-                android:textColor="@color/Gray7"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </HorizontalScrollView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_review_plus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="16dp">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_review_plus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="후기 10개 모두 보기"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/pretendard_medium"
-            android:background="@drawable/rectangle_gray7_10"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="14dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_review"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="48dp"-->
+<!--        android:fontFamily="@font/suite_bold"-->
+<!--        android:text="레이첼 님에 대한 후기"-->
+<!--        android:textColor="@color/Gray7"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guide_start"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_tour_answer_2" />-->
+
+<!--    <HorizontalScrollView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:scrollbars="none"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guide_start"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_review">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="302dp"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:background="@drawable/rectangle_line_gray2_12"-->
+<!--            android:padding="16dp">-->
+
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/civ_review_profile_img"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                app:layout_constraintDimensionRatio="32:32"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintWidth_percent="0.11">-->
+
+<!--            </de.hdodenhof.circleimageview.CircleImageView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_review_profile_name"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:fontFamily="@font/pretendard_medium"-->
+<!--                android:text="알렉스"-->
+<!--                android:textColor="@color/Gray6"-->
+<!--                android:textSize="14sp"-->
+<!--                app:layout_constraintStart_toEndOf="@id/civ_review_profile_img"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_review_profile_type"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/pretendard_regular"-->
+<!--                android:text="여행자"-->
+<!--                android:textColor="@color/Gray6"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/tv_review_profile_name"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tv_review_profile_name" />-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/pretendard_regular"-->
+<!--                android:text="2023년 12월"-->
+<!--                android:textColor="@color/Gray7"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/tv_review_profile_name" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:fontFamily="@font/pretendard_medium"-->
+<!--                android:text="레이첼은 정말 밝고 친절하고 열정적이고 소통 능력이 뛰어나면 배려심이 많고 호기심이 지대하고 늘 대화에 적극적으로 호응해 오며 웃음이 떠나지 않는 긍정적인 에너지의 멋진 사람이었습니다."-->
+<!--                android:textSize="14sp"-->
+<!--                android:textColor="@color/Gray7"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </HorizontalScrollView>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_review_plus"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:padding="16dp">-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/btn_review_plus"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="후기 10개 모두 보기"-->
+<!--            android:textSize="14sp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:fontFamily="@font/pretendard_medium"-->
+<!--            android:background="@drawable/rectangle_gray7_10"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:paddingVertical="14dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
 
 

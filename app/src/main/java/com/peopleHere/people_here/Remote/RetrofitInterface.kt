@@ -1,8 +1,12 @@
 package com.peopleHere.people_here.Remote
 
+import com.peopleHere.people_here.Data.ProfileInfoData
+import com.peopleHere.people_here.Data.ProfileRequestData
+import com.peopleHere.people_here.Data.ProfileResponseData
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -57,5 +61,12 @@ interface RetrofitInterface {
     fun joinConfirmInfo(@Path("tourDateId") tourDateId : Int)
             : Call<BaseResponse<JoinConfirmResponse>>
 
+    @GET("/api/users/{id}")
+    fun getProfileInfo(@Path("id") id : Int)
+            : Call<ProfileInfoData>
 
+    @PATCH("api/users/profile")
+    fun requestProfileInfo(
+        @Body request: ProfileRequestData
+    ): Call<ProfileResponseData>
 }

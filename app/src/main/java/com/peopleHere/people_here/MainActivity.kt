@@ -12,6 +12,7 @@ import com.peopleHere.people_here.Profile.ProfileFirstFragment
 import com.peopleHere.people_here.MyTour.MakingCourseSearchActivity
 import com.peopleHere.people_here.Profile.DayTripManageActivity
 import com.peopleHere.people_here.Profile.ProfileFragment
+import com.peopleHere.people_here.Profile.ProfileMeActivity
 import com.peopleHere.people_here.TitleCategory.MakingTourFragment
 import com.peopleHere.people_here.WishList.WishFragment
 import com.peopleHere.people_here.databinding.ActivityMainBinding
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 R.id.menu_profile -> {//코스 만들기 고쳤다아
-                    val intent = Intent(this, DayTripManageActivity::class.java)
+                    val intent = Intent(this, ProfileMeActivity::class.java)
                     startActivity(intent)
                     return@setOnItemSelectedListener true
                 }

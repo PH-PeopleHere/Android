@@ -5,6 +5,12 @@ import android.content.Intent
 import android.util.Log
 import com.peopleHere.people_here.ApplicationClass
 import com.peopleHere.people_here.ApplicationClass.Companion.X_ACCESS_TOKEN
+import com.peopleHere.people_here.Data.ImageRequestData
+import com.peopleHere.people_here.Data.ProfileInfoData
+import com.peopleHere.people_here.Data.ProfileRequestData
+import com.peopleHere.people_here.Data.ProfileResponseData
+import com.peopleHere.people_here.Data.QuestionsRequestData
+import com.peopleHere.people_here.Data.ResultData
 import com.peopleHere.people_here.Login.LoginEmailNextActivity
 import com.peopleHere.people_here.MainActivity
 import com.peopleHere.people_here.SignUp.SignUpActivity
@@ -480,6 +486,110 @@ class AuthService(private val context: Context) {
                     Log.d("Upcoming Failed", t.toString())
                 }
 
+            })
+    }
+
+    fun getProfileInfo(id: Int) {
+//        mainView.MainLoading()
+        authService.getProfileInfo(id)
+            .enqueue(object : Callback<ProfileInfoData> {
+                override fun onResponse(
+                    call: Call<ProfileInfoData>,
+                    response: Response<ProfileInfoData>
+                ) {
+                    Log.d("ProfileGet response", response.toString())
+                    if (response.isSuccessful) {
+                        val resp = response.body()
+                        Log.d("ProfileGet Response Body", resp.toString())
+                        Log.d("ProfileGet Response Body result", resp?.result.toString())
+                        when (resp!!.status) {
+                            200 -> {
+                                val profileResponse = resp.result
+                                profileResponse?.let {
+                                    Log.d("Response_profile_success", resp.result.toString())
+                                    ResultData(
+                                        resp.result.userId,
+                                        resp.result.userName,
+                                        resp.result.userImageUrl,
+                                        resp.result.id,
+                                        resp.result.email,
+                                        resp.result.firstName,
+                                        resp.result.gender,
+                                        resp.result.imageUrl,
+                                        resp.result.address,
+                                        resp.result.birth,
+                                        resp.result.job,
+                                        resp.result.almaMater,
+                                        resp.result.hobby,
+                                        resp.result.pet,
+                                        resp.result.favourite,
+                                        resp.result.status,
+                                        resp.result.languages,
+                                        resp.result.questions
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<ProfileInfoData>,
+                    t: Throwable
+                ) {
+                    Log.d("ProfileGet Failed", t.toString())
+                }
+
+            })
+    }
+
+    fun requestProfileInfo(
+    ) {
+        val request = ProfileRequestData(
+            imageRequest = ImageRequestData(encodingString = "hi", originalFileName = "hi"),
+            questions = QuestionsRequestData(additionalProp1 = "a1", additionalProp2 = "a2", additionalProp3 = "a3"),
+            languages = listOf(0),
+            address = "주소",
+            job = "student",
+            almaMater = "string",
+            hobby = "string",
+            pet = "string",
+            favourite = "string",
+            content = "string"
+        )//email이랑 pw를 넘기겠지
+        authService.requestProfileInfo(request)
+            .enqueue(object : Callback<ProfileResponseData> {
+                //익명이니 함수 구현 해줘야 함+enqueue 로 자동 비동기
+                override fun onResponse(
+                    call: Call<ProfileResponseData>,
+                    response: Response<ProfileResponseData>
+                ) {
+                    val resp = response.body() ?: run {
+                        Log.e("ProfileLoad response", "Response body is null")
+                        Log.e("ProfileLoad status", response.body()?.status.toString())
+                        return
+                    }
+                    Log.e("ProfileLoad status", resp.status.toString())
+
+                    when (resp.status) {
+
+                        200 -> {
+                            val signUpResponse = resp.result
+                            signUpResponse?.let {
+                                Log.d("Response_success", resp.result.toString())
+                            }
+                        }
+
+
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<ProfileResponseData>,
+                    t: Throwable
+                ) {
+                    Log.d("ProfileLoad failed", t.toString())//실패했을때 어떤 이윤지 쓰로어블하게
+                }
             })
     }
 
